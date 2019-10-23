@@ -49,7 +49,6 @@ public class LinkedList<T> {
 	// 在链表头添加新元素
 	public void addFirst(T e) {
 		add(0, e);
-		size++;
 	}
 
 	// 在链表中间插入元素
