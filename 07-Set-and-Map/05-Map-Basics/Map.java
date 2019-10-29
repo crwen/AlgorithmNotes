@@ -17,6 +17,8 @@ public interface Map<K, V> {
 
 	public void set(K key, V newValue);
 
+	public V get(K key);
+
 	public int getSize();
 
 	public boolean isEmpty();
