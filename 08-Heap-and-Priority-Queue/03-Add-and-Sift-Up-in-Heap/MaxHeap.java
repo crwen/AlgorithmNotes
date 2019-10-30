@@ -38,12 +38,12 @@ public class MaxHeap<T extends Comparable<T>> {
 
 	// 返回完全二叉树的数组表示中，一个索引所表示的元素的右孩子的索引
 	private int rightChild(int index) {
-		return index * 2 + 1;
+		return index * 2 + 2;
 	}
 
 	// 返回完全二叉树的数组表示中，一个索引所表示的元素的左孩子的索引
 	private int leftChild(int index) {
-		return index * 2 + 2;
+		return index * 2 + 1;
 	}
 
 	// 向堆中添加元素
