@@ -110,8 +110,8 @@ public class Array<T> {
 			resize(data.length / 2);
 		}
 		T e = data[index];
-		for (int i = index; i < size; i++) {
-			data[i] = data[i + 1];
+		for (int i = index + 1; i < size; i++) {
+			data[i - 1] = data[i];
 		}
 		size--;
 		data[size] = null;
@@ -143,6 +143,15 @@ public class Array<T> {
 			newdata[i] = data[i];
 		}
 		data = newdata;
+	}
+
+	public void swap(int i, int j) {
+		if (i < 0 || i > size || j < 0 || j > size) {
+			throw new IllegalArgumentException("Index is illegal");
+		}
+		T t = data[i];
+		data[i] = data[j];
+		data[j] = t;
 	}
 
 	@Override

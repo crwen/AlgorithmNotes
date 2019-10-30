@@ -28,4 +28,5 @@ class Solution2 {
 			val = x;
 		}
 	}
+
 }
