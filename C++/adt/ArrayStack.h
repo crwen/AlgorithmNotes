@@ -45,7 +45,7 @@ public:
 
 
     /**
-     * 打印数组的所有元素
+     * 打印数组所有元素
      */
     void print() {
         std::cout << "Stack: size = " << array->getSize() << ", capacity = " << array->getCapacity() << std::endl;
