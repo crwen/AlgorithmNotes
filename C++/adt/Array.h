@@ -1,3 +1,6 @@
+#ifndef DATASTRUCTURE_ARRAY_H
+#define DATASTRUCTURE_ARRAY_H
+
 #include <iostream>
 #include <cassert>
 
@@ -136,6 +139,14 @@ public:
         return data[index];
     }
 
+    T getFirst() {
+        return get(0);
+    }
+
+    T getLast() {
+        return get(size);
+    }
+
     /**
      * 判断数组中是否包含元素 e
      */
@@ -188,3 +199,5 @@ public:
     }
 
 };
+
+#endif // DATASTRUCTURE_ARRAY_H

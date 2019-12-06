@@ -1,11 +1,12 @@
 #include <iostream>
 #include <cstdlib>
 #include "adt/Array.h"
+#include "adt/ArrayStack.h"
 
 using namespace std;
 
 void array_test() {
-Array<int> *array = new Array<int>();
+    Array<int> *array = new Array<int>();
 
     array->addFirst(1);
     array->addLast(2);
@@ -34,10 +35,24 @@ Array<int> *array = new Array<int>();
 
 }
 
+void stack_array_test() {
+    ArrayStack<int> *stack = new ArrayStack<int>();
+    stack->push(1);
+    stack->push(2);
+    stack->push(3);
+    stack->push(4);
+    stack->push(5);
+    stack->push(6);
+    stack->print();
+    cout << "stack->pop() " << stack->pop() << endl;
+    stack->print();
+}
+
 int main(){
 
-    array_test();
-
+    //array_test();
+    stack_array_test();
+    system("pause");
 
 
     return 0;
