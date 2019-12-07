@@ -5,8 +5,11 @@
 #ifndef DATASTRUCTURE_ARRAYQUEUE_H
 #define DATASTRUCTURE_ARRAYQUEUE_H
 
-#include "Queue.h"
 #include "Array.h"
+#include "Queue.h"
+
+template <class T>
+class ArrayQueue;
 
 template <class T>
 class ArrayQueue : public Queue<T> {
@@ -58,7 +61,7 @@ public:
      *  获取队首元素
      * @return
      */
-    T getFront() override {
+    T getFront() {
         return array->getFirst();
     }
 

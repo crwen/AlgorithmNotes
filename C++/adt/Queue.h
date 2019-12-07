@@ -8,7 +8,7 @@
 template<class T>
 class Queue {
 public:
-    int getSize();
+    int getSize(){};
 
     bool isEmpty();
 
