@@ -1,9 +1,25 @@
 #include <iostream>
 #include <cstdlib>
-#include "adt/Array.h"
-#include "adt/ArrayStack.h"
-#include "adt/ArrayQueue.h"
+#include "adt/Array/Array.h"
+#include "adt/Stack/ArrayStack.h"
+#include "adt/Queue/ArrayQueue.h"
 using namespace std;
+
+void array_test();
+void stack_array_test();
+void queue_array_test();
+
+
+int main() {
+
+//    array_test();
+    stack_array_test();
+    queue_array_test();
+//    system("pause");
+
+    return 0;
+}
+
 
 void array_test() {
     Array<int> *array = new Array<int>();
@@ -32,7 +48,6 @@ void array_test() {
     array->removeElement(1);
     array->print();
 
-
 }
 
 void stack_array_test() {
@@ -59,21 +74,4 @@ void queue_array_test() {
     cout << "getFront() " << queue->getFront() << endl;
 
     queue->print();
-
-
 }
-
-
-
-int main() {
-
-//    array_test();
-//    stack_array_test();
-    queue_array_test();
-//    system("pause");
-
-    return 0;
-}
-
-
-
