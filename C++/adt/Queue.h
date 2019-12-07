@@ -8,15 +8,15 @@
 template<class T>
 class Queue {
 public:
-    int getSize(){};
+    virtual int getSize() = 0;
 
-    bool isEmpty();
+    virtual bool isEmpty() = 0;
 
-    void enqueue(T e);
+    virtual void enqueue(T e) = 0;
 
-    T dequeue();
+    virtual T dequeue() = 0;
 
-    T getFront();
+    virtual T getFront() = 0;
 };
 
 #endif //DATASTRUCTURE_QUEUE_H
