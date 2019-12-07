@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include "adt/Array.h"
 #include "adt/ArrayStack.h"
-
+#include "adt/ArrayQueue.h"
 using namespace std;
 
 void array_test() {
@@ -21,7 +21,7 @@ void array_test() {
     array->print();
     cout << "removeLast() " << array->removeLast() << endl;
     array->print();
-    cout << "remove(2) "  << array->remove(2) << endl;
+    cout << "remove(2) " << array->remove(2) << endl;
     cout << "remove(1) " << array->remove(1) << endl;
     array->print();
 
@@ -48,12 +48,32 @@ void stack_array_test() {
     stack->print();
 }
 
-int main(){
+void queue_array_test() {
+    ArrayQueue<int> *queue = new ArrayQueue<int>();
+    for (int i = 0; i < 5; i++) {
+        queue->enqueue(i);
+    }
+    queue->print();
+    int e = queue->dequeue();
+    cout << "dequeue() " << e << endl;
+    cout << "getFront() " << queue->getFront() << endl;
+
+    queue->print();
+
+
+}
+
+
+
+int main() {
 
 //    array_test();
-    stack_array_test();
+//    stack_array_test();
+    queue_array_test();
 //    system("pause");
-
 
     return 0;
 }
+
+
+
