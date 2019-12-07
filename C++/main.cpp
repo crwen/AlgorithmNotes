@@ -3,18 +3,21 @@
 #include "adt/Array/Array.h"
 #include "adt/Stack/ArrayStack.h"
 #include "adt/Queue/ArrayQueue.h"
+#include "adt/Queue/LoopQueue.h"
 using namespace std;
 
 void array_test();
 void stack_array_test();
 void queue_array_test();
+void loop_queue_test();
 
 
 int main() {
 
 //    array_test();
-    stack_array_test();
-    queue_array_test();
+//    stack_array_test();
+//    queue_array_test();
+    loop_queue_test();
 //    system("pause");
 
     return 0;
@@ -74,4 +77,19 @@ void queue_array_test() {
     cout << "getFront() " << queue->getFront() << endl;
 
     queue->print();
+}
+
+void loop_queue_test() {
+    LoopQueue<int> *queue = new LoopQueue<int>();
+    for (int i = 0; i < 5; i++) {
+        queue->enqueue(i);
+    }
+    queue->print();
+    while (!queue->isEmpty()) {
+        cout << "getFront: " << queue->getFront() << "\t";
+        cout << "dequeue: " << queue->dequeue() << endl;
+    }
+
+
+
 }
