@@ -1,3 +1,7 @@
+//
+// Created by crwen on 2019/12/7.
+//
+
 #ifndef DATASTRUCTURE_ARRAY_H
 #define DATASTRUCTURE_ARRAY_H
 
@@ -14,7 +18,7 @@ private:
 
 
     /**
-     * ĞŞ¸ÄÈİÁ¿
+     * ä¿®æ”¹å®¹é‡
      */
     void resize(int newCapacity) {
         T *newData = new T[newCapacity];
@@ -39,46 +43,46 @@ public:
     }
 
     /**
-     * ·µ»ØÊı×é³¤¶È
+     * è¿”å›æ•°ç»„é•¿åº¦
      */
     int getSize() {
         return size;
     }
 
     /**
-     * ·µ»ØÊı×éÈİÁ¿
+     * è¿”å›æ•°ç»„å®¹é‡
      */
     int getCapacity() {
         return capacity;
     }
 
     /**
-     * ÅĞ¶ÏÊÇ·ñÎª¿Õ
+     * åˆ¤æ–­æ˜¯å¦ä¸ºç©º
      */
     bool isEmpty() {
         return size == 0;
     }
 
     /**
-     * ÔÚÊı×éÎ²Ìí¼ÓÔªËØ e
+     * åœ¨æ•°ç»„å°¾æ·»åŠ å…ƒç´  e
      */
     void addLast(T e) {
         add(size, e);
     }
 
     /**
-     * ÔÚÏÂ±êÎª 0 ³öÌí¼ÓÔªËØ e
+     * åœ¨ä¸‹æ ‡ä¸º 0 å‡ºæ·»åŠ å…ƒç´  e
      */
     void addFirst(T e) {
         add(0, e);
     }
 
     /**
-     * ÔÚÏÂ±êÎª index ´¦Ìí¼Ó ÔªËØ e
+     * åœ¨ä¸‹æ ‡ä¸º index å¤„æ·»åŠ  å…ƒç´  e
     */
     void add(int index, T e) {
         assert(index >= 0 && index <= size);
-        // À©Èİ
+        // æ‰©å®¹
         if (size == capacity) {
             resize(2 * capacity);
         }
@@ -90,21 +94,21 @@ public:
     }
 
     /**
-     * É¾³ı×îºóÒ»¸öÔªËØ²¢·µ»Ø
+     * åˆ é™¤æœ€åä¸€ä¸ªå…ƒç´ å¹¶è¿”å›
      */
     T removeLast() {
 
         return remove(size - 1);
     }
     /**
-     * É¾³ıµÚÒ»¸öÔªËØ²¢·µ»Ø
+     * åˆ é™¤ç¬¬ä¸€ä¸ªå…ƒç´ å¹¶è¿”å›
      */
     T removeFirst() {
         return remove(0);
     }
 
     /**
-     * É¾³ıÏÂ±êÎª index ´¦ÔªËØ e£¬²¢·µ»Ø
+     * åˆ é™¤ä¸‹æ ‡ä¸º index å¤„å…ƒç´  eï¼Œå¹¶è¿”å›
      */
     T remove(int index) {
         assert(index >= 0 && index < size);
@@ -120,7 +124,7 @@ public:
     }
 
     /**
-     * É¾³ıÔªËØ e
+     * åˆ é™¤å…ƒç´  e
      */
     bool removeElement(T e) {
         int index = find(e);
@@ -132,7 +136,7 @@ public:
     }
 
     /**
-     * »ñÈ¡ÏÂ±êÎª index µÄÔªËØ
+     * è·å–ä¸‹æ ‡ä¸º index çš„å…ƒç´ 
      */
     T get(int index) {
         assert(index >= 0 && index < size);
@@ -148,7 +152,7 @@ public:
     }
 
     /**
-     * ÅĞ¶ÏÊı×éÖĞÊÇ·ñ°üº¬ÔªËØ e
+     * åˆ¤æ–­æ•°ç»„ä¸­æ˜¯å¦åŒ…å«å…ƒç´  e
      */
     bool contain(T e) {
         for (int i = 0; i < size; i++) {
@@ -160,7 +164,7 @@ public:
     }
 
     /**
-     * ²éÕÒÔªËØ£¬²¢·µ»ØĞ¡±ê¡£ Èç¹ûÃ»ÓĞ·µ»Ø -1
+     * æŸ¥æ‰¾å…ƒç´ ï¼Œå¹¶è¿”å›å°æ ‡ã€‚ å¦‚æœæ²¡æœ‰è¿”å› -1
      */
     int find(T e) {
         for (int i = 0; i < size; i++) {
@@ -172,7 +176,7 @@ public:
     }
 
     /**
-     * ĞŞ¸ÄÏÂ±êÎª index ´¦ÔªËØÎª e , ·µ»ØÔ­À´ÔªËØ
+     * ä¿®æ”¹ä¸‹æ ‡ä¸º index å¤„å…ƒç´ ä¸º e , è¿”å›åŸæ¥å…ƒç´ 
      */
     T set(int index, T e) {
         assert(index >= 0 && index < size);
@@ -182,7 +186,7 @@ public:
     }
 
     /**
-     * ´òÓ¡Êı×éµÄËùÓĞÔªËØ
+     * æ‰“å°æ•°ç»„çš„æ‰€æœ‰å…ƒç´ 
      */
     void print() {
         std::cout << "Array: size = " << size << ", capacity = " << getCapacity() << std::endl;
@@ -200,4 +204,4 @@ public:
 
 };
 
-#endif // DATASTRUCTURE_ARRAY_H
+#endif //DATASTRUCTURE_ARRAY_H

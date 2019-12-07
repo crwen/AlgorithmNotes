@@ -17,18 +17,18 @@ void array_test() {
     array->add(4, 400);
     array->print();
 
-    cout << "removeFirst()£º " << array->removeFirst() << endl;
+    cout << "removeFirst() " << array->removeFirst() << endl;
     array->print();
-    cout << "removeLast()£º " << array->removeLast() << endl;
+    cout << "removeLast() " << array->removeLast() << endl;
     array->print();
-    cout << "remove(2)£º "  << array->remove(2) << endl;
-    cout << "remove(1)£º " << array->remove(1) << endl;
+    cout << "remove(2) "  << array->remove(2) << endl;
+    cout << "remove(1) " << array->remove(1) << endl;
     array->print();
 
-    cout << "contain(1)£º " << array->contain(1) << endl;
-    cout << "contain(100)£º " << array->contain(100) << endl;
-    cout << "get(1)£º " << array->get(1) << endl;
-    cout << "find(1)£º " << array->find(1) << endl;
+    cout << "contain(1) " << array->contain(1) << endl;
+    cout << "contain(100) " << array->contain(100) << endl;
+    cout << "get(1) " << array->get(1) << endl;
+    cout << "find(1) " << array->find(1) << endl;
     array->removeElement(1);
     array->print();
 
@@ -50,9 +50,9 @@ void stack_array_test() {
 
 int main(){
 
-    //array_test();
+//    array_test();
     stack_array_test();
-    system("pause");
+//    system("pause");
 
 
     return 0;

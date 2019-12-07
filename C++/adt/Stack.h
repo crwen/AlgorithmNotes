@@ -1,3 +1,7 @@
+//
+// Created by crwen on 2019/12/7.
+//
+
 #ifndef DATASTRUCTURE_STACK_H
 #define DATASTRUCTURE_STACK_H
 
@@ -15,4 +19,4 @@ public:
     T peek();
 };
 
-#endif // DATASTRUCTURE_STACK_H
+#endif //DATASTRUCTURE_STACK_H

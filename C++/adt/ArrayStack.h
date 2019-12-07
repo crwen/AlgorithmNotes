@@ -1,3 +1,7 @@
+//
+// Created by crwen on 2019/12/7.
+//
+
 #ifndef DATASTRUCTURE_ARRAYSTACK_H
 #define DATASTRUCTURE_ARRAYSTACK_H
 
@@ -45,7 +49,7 @@ public:
 
 
     /**
-     * ´òÓ¡Êı×éËùÓĞÔªËØ
+     * æ‰“å°æ•°ç»„æ‰€æœ‰å…ƒç´ 
      */
     void print() {
         std::cout << "Stack: size = " << array->getSize() << ", capacity = " << array->getCapacity() << std::endl;
@@ -58,4 +62,5 @@ private:
     Array<T> *array;
 };
 
-#endif // DATASTRUCTURE_ARRAYSTACK_H
+
+#endif //DATASTRUCTURE_ARRAYSTACK_H
