@@ -8,15 +8,15 @@
 template<class T>
 class Stack {
 public:
-    int getSize();
+    virtual int getSize() = 0;
 
-    bool isEmpty();
+    virtual bool isEmpty() = 0;
 
-    void push(T e);
+    virtual void push(T e) = 0;
 
-    T pop();
+    virtual T pop() = 0;
 
-    T peek();
+    virtual T peek() = 0;
 };
 
 #endif //DATASTRUCTURE_STACK_H
