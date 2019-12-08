@@ -69,7 +69,18 @@ public:
     }
 
     T remove(int index) override {
-        return nullptr;
+        assert(index >= 0 && index < size);
+        Node<T> *prev = head;
+        for (int i = 0; i < index; i++) {
+            prev = prev->next;
+        }
+        Node<T> node = prev->next;
+        prev->next = node.next;
+        node->next = nullptr;
+        int ret = node->e;
+
+        size--;
+        return ret;
     }
 
 private:
