@@ -41,14 +41,27 @@ public:
         head = nullptr;
     }
 
+    /**
+     *  获取元素个数
+     * @return
+     */
     int getSize() override {
         return size;
     }
 
+    /**
+     *  判断链表是否为空
+     * @return
+     */
     bool isEmpty() override {
         return size == 0;
     }
 
+    /**
+     *  在下标为 index 处添加元素 e
+     * @param index
+     * @param e
+     */
     void add(int index, T e) override {
         assert(index >= 0 && index < size);
         Node<T> *prev = head;
@@ -59,6 +72,11 @@ public:
         size++;
     }
 
+    /**
+     *  获取下标为 index 的元素
+     * @param index
+     * @return
+     */
     T get(int index) override {
         assert(index >= 0 && index < size);
         Node<T> *cur = head->next;
@@ -68,6 +86,11 @@ public:
         return cur->e;
     }
 
+    /**
+     *  删除下标为 index 处的元素并返回
+     * @param index
+     * @return
+     */
     T remove(int index) override {
         assert(index >= 0 && index < size);
         Node<T> *prev = head;
