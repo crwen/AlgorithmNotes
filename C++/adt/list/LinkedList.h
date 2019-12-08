@@ -6,6 +6,8 @@
 #define DATASTRUCTURE_LINKEDLIST_H
 
 #include "List.h"
+#include <iostream>
+#include <cassert>
 
 template <class T>
 class Node {
@@ -48,7 +50,13 @@ public:
     }
 
     void add(int index, T e) override {
-
+        assert(index >= 0 && index < size);
+        Node<T> *prev = head;
+        for (int i = 0; i < index; ++i) {
+            prev = prev->next;
+        }
+        prev->next = new Node<T>(e, prev->next);
+        size++;
     }
 
     T get(int index) override {
