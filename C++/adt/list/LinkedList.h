@@ -47,7 +47,7 @@ public:
         return size == 0;
     }
 
-    void add(T e) override {
+    void add(int index, T e) override {
 
     }
 

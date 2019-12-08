@@ -14,7 +14,7 @@ public:
 
     virtual T get(int index) = 0;
 
-    virtual void add(T e) = 0;
+    virtual void add(int index, T e) = 0;
 
     virtual T remove(int index) = 0;
 };
