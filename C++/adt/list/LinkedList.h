@@ -60,7 +60,12 @@ public:
     }
 
     T get(int index) override {
-        return nullptr;
+        assert(index >= 0 && index < size);
+        Node<T> *cur = head->next;
+        for (int i = 0; i < index; i++) {
+            cur = cur->next;
+        }
+        return cur->e;
     }
 
     T remove(int index) override {
