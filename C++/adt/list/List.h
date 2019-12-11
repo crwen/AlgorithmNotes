@@ -18,7 +18,7 @@ public:
 
     virtual T remove(int index) = 0;
 
-    virtual T set(T e) = 0;
+    virtual T set(int index, T e) = 0;
 };
 
 #endif //DATASTRUCTURE_LIST_H
