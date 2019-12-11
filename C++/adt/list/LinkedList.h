@@ -103,13 +103,21 @@ public:
         return cur->e;
     }
 
+    T getFirst() {
+        return get(0);
+    }
+
+    T getLast() {
+        return get(size - 1);
+    }
+
     /**
      *  删除下标为 index 处的元素并返回
      * @param index
      * @return
      */
     T remove(int index) override {
-        assert(index >= 0 && index < size);
+        assert(index > 0 && index < size);
         Node<T> *prev = head;
         for (int i = 0; i < index; i++) {
             prev = prev->next;
@@ -122,6 +130,76 @@ public:
         size--;
         return ret;
     }
+
+    T removeFirst() {
+        return remove(0);
+    }
+
+    T removeLast() {
+        return remove(size -1);
+    }
+
+    /**
+     *  修改下标 index 处元素为 e
+     * @param index
+     * @param e
+     * @return
+     */
+    T set(int index, T e) override {
+        assert(index > 0 && index < size);
+        Node<T> cur = head->next;
+        for (int i = 0; i < index; i++)
+            cur = cur.next;
+        T ret = cur->e;
+        cur->e = e;
+        return ret;
+    }
+
+    T setFirst(T e) {
+        set(0, e);
+    }
+
+    T setLast(T e) {
+        set(size - 1, e);
+    }
+
+    void removeElement(T e) {
+        Node<T> *prev = head;
+        while (prev->next->e != e && prev->next != nullptr) {
+            prev = prev->next;
+        }
+        if (prev->next != nullptr) {
+            Node<T> node = prev->next;
+            prev->next = node.next;
+            node.next = nullptr;
+            size--;
+        }
+    }
+
+    bool contains(T e) {
+        Node<T> *prev = head;
+        while (prev->next->e != e && prev->next != nullptr) {
+            prev = prev->next;
+        }
+        if (prev->next->e != nullptr)
+            return true;
+        return false;
+    }
+
+    void print() {
+        Node<T> *prev = head;
+        std::cout << "LinkedList: size = " << size << std::endl;
+        std::cout << "[";
+        for (int i = 0; i < size; ++i) {
+            prev = prev->next;
+            std::cout << prev->e;
+            if (i < size - 1) {
+                std::cout << ", ";
+            }
+        }
+        std::cout << "]" << std::endl;
+    }
+
 
 private:
     Node<T> *head;
