@@ -63,13 +63,30 @@ public:
      * @param e
      */
     void add(int index, T e) override {
-        assert(index >= 0 && index < size);
+        assert(index >= 0 && index <= size);
         Node<T> *prev = head;
         for (int i = 0; i < index; ++i) {
             prev = prev->next;
         }
         prev->next = new Node<T>(e, prev->next);
         size++;
+    }
+
+    void addFirst(T e) {
+//        Node<T> *prev = head;
+//        head->next = new Node<T>(e, prev->next);
+//        size++;
+        add(0, e);
+    }
+
+    void addLast(T e) {
+//        Node<T> *prev = head;
+//        while (prev->next != nullptr) {
+//            prev = prev->next;
+//        }
+//        prev->next = new Node<T>(e);
+//        size++;
+        add(size, e);
     }
 
     /**
