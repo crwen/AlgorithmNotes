@@ -4,12 +4,14 @@
 #include "adt/Stack/ArrayStack.h"
 #include "adt/Queue/ArrayQueue.h"
 #include "adt/Queue/LoopQueue.h"
+#include "adt/list/LinkedList.h"
 using namespace std;
 
 void array_test();
 void stack_array_test();
 void queue_array_test();
-void loop_queue_test();
+//void loop_queue_test();
+void linkedlist_test();
 
 
 int main() {
@@ -17,7 +19,8 @@ int main() {
 //    array_test();
 //    stack_array_test();
 //    queue_array_test();
-    loop_queue_test();
+//    loop_queue_test();
+    linkedlist_test();
 //    system("pause");
 
     return 0;
@@ -90,6 +93,21 @@ void loop_queue_test() {
         cout << "dequeue: " << queue->dequeue() << endl;
     }
 
+}
 
-
+void linkedlist_test() {
+    LinkedList<int> *list = new LinkedList<int>();
+    for (int i = 0; i < 5; i++)
+        list->addLast(i);
+    list->add(3, 10000);
+    list->addFirst(-1);
+    list->print();
+    cout << "removeFirst: " << list->removeFirst();
+    cout << "removeLast: " << list->removeLast();
+    list->print();
+    cout << "removeElement(10000): \n";
+    list->removeElement(10000);
+    cout << "removeElement(100): \n";
+    list->removeElement(1000);
+    list->print();
 }
