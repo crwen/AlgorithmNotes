@@ -7,6 +7,7 @@
 
 #include "../list/LinkedList.h"
 #include "Queue.h"
+#include <cassert>
 
 template <class T>
 class QNode {
@@ -51,8 +52,7 @@ public:
     }
 
     T dequeue() override {
-        if (isEmpty())
-            return nullptr;
+        assert(!isEmpty());
         QNode<T> *node = head;
         head = head->next;
         node->next = nullptr;
@@ -64,8 +64,7 @@ public:
     }
 
     T getFront() override {
-        if (isEmpty())
-            return nullptr;
+        assert(!isEmpty());
         return head->e;
     }
 
