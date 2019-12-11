@@ -6,6 +6,7 @@
 #include "adt/Queue/LoopQueue.h"
 #include "adt/list/LinkedList.h"
 #include "adt/stack/LinkedListStack.h"
+#include "adt/queue/LinkedListQueue.h"
 using namespace std;
 
 void array_test();
@@ -14,6 +15,7 @@ void queue_array_test();
 //void loop_queue_test();
 //void linkedlist_test();
 void stack_list_test();
+void queue_list_test();
 
 
 int main() {
@@ -23,7 +25,8 @@ int main() {
 //    queue_array_test();
 //    loop_queue_test();
 //    linkedlist_test();
-    stack_list_test();
+//    stack_list_test();
+    queue_list_test();
 //    system("pause");
 
     return 0;
@@ -126,4 +129,17 @@ void stack_list_test() {
     stack->print();
     cout << "stack->pop() " << stack->pop() << endl;
     stack->print();
+}
+
+void queue_list_test() {
+    LinkedListQueue<int> *queue = new LinkedListQueue<int>();
+    for (int i = 0; i < 5; i++) {
+        queue->enqueue(i);
+    }
+    queue->print();
+    int e = queue->dequeue();
+    cout << "dequeue() " << e << endl;
+    cout << "getFront() " << queue->getFront() << endl;
+
+    queue->print();
 }
