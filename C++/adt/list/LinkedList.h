@@ -117,13 +117,13 @@ public:
      * @return
      */
     T remove(int index) override {
-        assert(index > 0 && index < size);
+        assert(index >= 0 && index < size);
         Node<T> *prev = head;
         for (int i = 0; i < index; i++) {
             prev = prev->next;
         }
-        Node<T> node = prev->next;
-        prev->next = node.next;
+        Node<T> *node = prev->next;
+        prev->next = node->next;
         node->next = nullptr;
         int ret = node->e;
 
@@ -147,9 +147,9 @@ public:
      */
     T set(int index, T e) override {
         assert(index > 0 && index < size);
-        Node<T> cur = head->next;
+        Node<T> *cur = head->next;
         for (int i = 0; i < index; i++)
-            cur = cur.next;
+            cur = cur->next;
         T ret = cur->e;
         cur->e = e;
         return ret;
@@ -169,9 +169,9 @@ public:
             prev = prev->next;
         }
         if (prev->next != nullptr) {
-            Node<T> node = prev->next;
-            prev->next = node.next;
-            node.next = nullptr;
+            Node<T> *node = prev->next;
+            prev->next = node->next;
+            node->next = nullptr;
             size--;
         }
     }
