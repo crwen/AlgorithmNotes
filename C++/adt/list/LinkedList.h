@@ -201,6 +201,19 @@ public:
     }
 
 
+    void toPrint(){
+        Node<T> *prev = head;
+        std::cout << "[";
+        for (int i = 0; i < size; ++i) {
+            prev = prev->next;
+            std::cout << prev->e;
+            if (i < size - 1) {
+                std::cout << ", ";
+            }
+        }
+        std::cout << "]";
+    }
+
 private:
     Node<T> *head;
     int size;
