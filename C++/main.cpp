@@ -7,15 +7,18 @@
 #include "adt/list/LinkedList.h"
 #include "adt/stack/LinkedListStack.h"
 #include "adt/queue/LinkedListQueue.h"
+#include "adt/bst/BST.h"
+#include <ctime>
 using namespace std;
 
 void array_test();
 void stack_array_test();
 void queue_array_test();
-//void loop_queue_test();
-//void linkedlist_test();
+void loop_queue_test();
+void linkedlist_test();
 void stack_list_test();
 void queue_list_test();
+void bst_test();
 
 
 int main() {
@@ -26,7 +29,8 @@ int main() {
 //    loop_queue_test();
 //    linkedlist_test();
 //    stack_list_test();
-    queue_list_test();
+//    queue_list_test();
+    bst_test();
 //    system("pause");
 
     return 0;
@@ -142,4 +146,17 @@ void queue_list_test() {
     cout << "getFront() " << queue->getFront() << endl;
 
     queue->print();
+}
+
+void bst_test() {
+    BST<int> *bst = new BST<int>();
+    srand(time(0));
+    for (int i = 0;i < 10; i++) {
+        bst->add(rand());
+    }
+    bst->inOrder();
+    bst->preOrder();
+    bst->postOrder();
+
+    cout << bst->getSize() << endl;
 }
