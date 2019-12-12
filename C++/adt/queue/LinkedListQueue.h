@@ -56,8 +56,9 @@ public:
         QNode<T> *node = head;
         head = head->next;
         node->next = nullptr;
+        delete node;
         if (head == nullptr) {
-            tail == nullptr;
+            tail = nullptr;
         }
         size--;
         return node->e;
