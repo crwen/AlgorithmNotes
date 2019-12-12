@@ -125,7 +125,7 @@ public:
         Node<T> *node = prev->next;
         prev->next = node->next;
         node->next = nullptr;
-        int ret = node->e;
+        T ret = node->e;
 
         size--;
         return ret;
