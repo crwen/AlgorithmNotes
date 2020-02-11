@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/MyCode/Algorithm/Sorting/MergeSort/SortTestHelper.h
+iostream
+-
+ctime
+-
+cassert
+-
+
+E:/MyCode/Algorithm/Sorting/MergeSort/main.cpp
+iostream
+-
+algorithm
+-
+SortTestHelper.h
+E:/MyCode/Algorithm/Sorting/MergeSort/SortTestHelper.h
+

@@ -22,13 +22,13 @@ void insertionSort(T arr[], int n) {
 
 int main() {
 
-    int n = 100000;
+    int n = 10000;
     int *arr = SortTestHelper::generateRandomArray(n, 0, n);
     int *arr2 = SortTestHelper::copyIntArray(arr, n);
 
     SortTestHelper::testSort("insertionSort", insertionSort, arr, n);
-    SortTestHelper::testSort("selectionSort", selectionSort, arr, n);
-    SortTestHelper::testSort("bubbleSort", bubbleSort, arr, n);
+    SortTestHelper::testSort("selectionSort", selectionSort, arr2, n);
+//    SortTestHelper::testSort("bubbleSort", bubbleSort, arr, n);
 
     cout << "==========================near sorted array==========================\n";
 

@@ -1,9 +1,9 @@
 //
-// Created by crwen on 2020/2/8.
+// Created by crwen on 2020/2/11.
 //
 
-#ifndef INSERTIONSORT_SORTTESTHELPER_H
-#define INSERTIONSORT_SORTTESTHELPER_H
+#ifndef MERGESORT_SORTTESTHELPER_H
+#define MERGESORT_SORTTESTHELPER_H
 #include <iostream>
 #include <ctime>
 #include <cassert>
@@ -74,4 +74,4 @@ namespace SortTestHelper {
         return arr;
     }
 }
-#endif //INSERTIONSORT_SORTTESTHELPER_H
+#endif //MERGESORT_SORTTESTHELPER_H

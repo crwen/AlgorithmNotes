@@ -1,0 +1,4 @@
+ToolSet: w64 6.0 (local)@D:\Program Files (x86)\ming-w64re\mingw64
+Options: 
+
+Options:-DCMAKE_SH=CMAKE_SH-NOTFOUND
