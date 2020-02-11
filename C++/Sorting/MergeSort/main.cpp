@@ -40,7 +40,8 @@ void __mergeSort(T arr[], int rangeL, int rangeR) {
     int mid = (rangeR - rangeL) / 2 + rangeL;
     __mergeSort(arr, rangeL, mid);
     __mergeSort(arr, mid + 1, rangeR);
-    merge(arr, rangeL, mid, rangeR);
+    if (arr[mid] > arr[mid + 1])
+        merge(arr, rangeL, mid, rangeR);
 
 }
 
@@ -65,11 +66,11 @@ void selectionSort(T arr[], int n) {
 
 int main() {
 
-    int n = 100000;
+    int n = 1000000;
     int* arr = SortTestHelper::generateRandomArray(n, 0, n);
     int* arr2 = SortTestHelper::copyIntArray(arr, n);
 
-    SortTestHelper::testSort("selectionSort", selectionSort, arr2, n);
+//    SortTestHelper::testSort("selectionSort", selectionSort, arr2, n);
     SortTestHelper::testSort("mergeSort", mergeSort, arr, n);
 
     return 0;
