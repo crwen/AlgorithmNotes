@@ -19,25 +19,28 @@
 
 空间复杂度 O(n)
 
-```java
-    public void moveZeroes(int[] nums) {
-        int[] arr = new int[nums.length];
+```c++
+class Solution {
+public:
+    // 时间复杂度 O(n)
+    // 空间复杂度 O(n)
+    void moveZeroes(vector<int>& nums) {
+        vector<int> nonZeroElements;
 
-        int k = 0;
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < nums.size(); ++i) {
             if (nums[i] != 0) {
-                arr[k++] = nums[i];
+                nonZeroElements.push_back( nums[i] );
             }
         }
-        
-        for (int i = 0; i < k; i++) {
-            nums[i] = arr[i];
+        for (int i = 0; i < nonZeroElements.size(); ++i) {
+            nums[i] = nonZeroElements[i];
         }
-        
-        for (int i = k; i < nums.length; i++) {
+
+        for (int i = nonZeroElements.size(); i < nums.size(); ++i) {
             nums[i] = 0;
         }
     }
+};
 ```
 
 **方法二**
@@ -50,21 +53,28 @@
 
 ![image](./../../../asset/move_zeros1.png)
 
-```java
-public class Solution {
-    public void moveZeroes(int[] nums) {
-        int k = 0; //指向第一个非零元素
+```c++
+class Solution {
+public:
+    // 时间复杂度 O(n)
+    // 空间复杂度 O(1)
+    void moveZeroes(vector<int>& nums) {
 
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] != 0) {
+        int k = 0; // nums 中， [0...k] 的元素均为非 0 元素
+
+        // 遍历到第 i 个元素后，保证 [0...i]中所有非0元素都按照顺序排列在 [0...k]中
+        for (int i = 0; i < nums.size(); ++i) {
+            if (nums[i] == 0) {
                 nums[k++] = nums[i];
             }
         }
-        for (int i = k; i <nums.length; i++) {
+
+        // 将nums剩余位置放置为 0
+        for (int i = k; i < nums.size(); ++i) {
             nums[i] = 0;
         }
     }
-}
+};
 ```
 
 **方法三**
@@ -76,22 +86,27 @@ public class Solution {
 空间复杂度 O(1)
 
 
-```java
-public class Solution {
-    public void moveZeroes(int[] nums) {
-        int k = 0; //指向第一个非零元素
+```c++
+class Solution {
+public:
+    // 时间复杂度 O(n)
+    // 空间复杂度 O(1)
+    void moveZeroes(vector<int>& nums) {
 
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] != 0) {
-                swap(nums, k++, i);
+        int k = 0; // nums 中， [0...k] 的元素均为非 0 元素
+
+        // 遍历到第 i 个元素后，保证 [0...i]中所有非0元素都按照顺序排列在 [0...k]中
+        // 同时，[k...i] 为 0
+        for (int i = 0; i < nums.size(); ++i) {
+            if (nums[i] == 0) {
+                swap(nums[k++], nums[i]);
             }
         }
+
+        // 将nums剩余位置放置为 0
+        for (int i = k; i < nums.size(); ++i) {
+            nums[i] = 0;
+        }
     }
-    
-    public void swap(int arr[], int i, int j) {
-        int tmp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = tmp;
-    }
-}
+};
 ```
