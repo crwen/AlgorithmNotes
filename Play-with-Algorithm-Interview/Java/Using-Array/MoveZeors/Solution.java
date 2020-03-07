@@ -1,4 +1,3 @@
-package movezeros;
 
 /**
  * ClassName: Solution
