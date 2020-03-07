@@ -51,7 +51,7 @@ public:
 
 空间复杂度 O(1)
 
-![image](./../../../asset/move_zeros1.png)
+![image](./../../../asset/move_zeros1.gif)
 
 ```c++
 class Solution {
@@ -85,6 +85,7 @@ public:
 
 空间复杂度 O(1)
 
+![image](./../../../asset/move_zeros2.gif)
 
 ```c++
 class Solution {

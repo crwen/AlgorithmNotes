@@ -48,7 +48,7 @@
 
 空间复杂度 O(1)
 
-![image](./../../../asset/move_zeros1.png)
+![image](./../../../asset/move_zeros1.gif)
 
 ```java
 public class Solution {
@@ -74,6 +74,8 @@ public class Solution {
 时间复杂度 O(n)
 
 空间复杂度 O(1)
+
+![image](./../../../asset/move_zeros2.gif)
 
 
 ```java
