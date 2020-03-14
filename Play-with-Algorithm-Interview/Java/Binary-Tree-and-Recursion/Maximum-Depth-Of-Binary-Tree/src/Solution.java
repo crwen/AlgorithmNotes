@@ -1,4 +1,3 @@
-package maximumdepthofbinarytree;
 
 /**
  * ClassName: Solution
