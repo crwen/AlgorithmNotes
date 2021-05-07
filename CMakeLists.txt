@@ -3,4 +3,4 @@ project(Algorithm_Note)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Algorithm_Note main.cpp linear/linear_search.h)
+add_executable(Algorithm_Note main.cpp linear/linear_search.h util/array.h test/linear.h)

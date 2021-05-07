@@ -19,18 +19,6 @@ int search(T arr[], int n, T target) {
     return -1;
 }
 
-int* generateIntArray(int n, int rangeL, int rangeR) {
-    assert(rangeL <= rangeR);
-    int *arr = new int[n];
-    srand(time(NULL));
-    for (int i = 0; i < n; i ++) {
-        arr[i] = rand() % (rangeR - rangeL) + rangeL;
-    }
-    return arr;
-}
-
-
-
 
 
 #endif //ALGORITHM_NOTE_LINEAR_SEARCH_H
